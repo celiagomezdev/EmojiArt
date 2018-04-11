@@ -137,7 +137,8 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
                     DispatchQueue.main.async {
                         if let attributedString = provider as? NSAttributedString {
                             placeholderContext.commitInsertion(dataSourceUpdates: { insertionIndexPath in
-                                self.emojis.insert(attributedString.string, at: insertionIndexPath.item)                                })
+                                self.emojis.insert(attributedString.string, at: insertionIndexPath.item)
+                            })
                         } else {
                             placeholderContext.deletePlaceholder()
                         }
@@ -145,6 +146,7 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
                 }
             }
         }
+    }
     
     
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
